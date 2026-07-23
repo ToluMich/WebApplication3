@@ -1,0 +1,16 @@
+﻿This Application is built with .NET Core 10 and it is to run a test don the use of Serilog and Seq.
+
+Serilog is the first thing that have to be configured in the Program.cs file, and then the Seq sink has to be added to the Serilog configuration.
+
+To get the Seq sink, you need to install the Serilog.Sinks.Seq NuGet package. You can do this by running the following command in the Package Manager Console:
+
+Below are the list of the packages that are required to be installed in the project:
+Serilog.AspNetCore
+Serilog.Sinks.File
+Serilog.Sinks.Seq
+
+To get the Seq running, you need docker and spin up an instance of Seq. You can do this by running the following command in your terminal:
+
+"docker run --name seq -d -e ACCEPT_EULA=Y -e SEQ_FIRSTRUN_ADMINPASSWORD=YourPassword123! -p 5341:80 datalust/seq:latest"
+
+You can use anything for the password because it is of a varying thing and not static
